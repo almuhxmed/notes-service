@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY src ./src
 
-RUN useradd --system --no-create-home app
-USER app
+RUN useradd --system --no-create-home --uid 1000 app
+USER 1000:1000
 
 CMD ["python3", "src/server.py"]
